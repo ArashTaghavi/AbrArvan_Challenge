@@ -1,0 +1,111 @@
+@import "mixins";
+
+.header {
+    @include HideOnMobile;
+    position: relative;
+    background: #1fc5b9;
+    padding-top: 50px;
+    height: 50vh;
+    min-height: 400px;
+
+    .header__container {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 9%;
+        @include MediumQuery {
+            display: none;
+        }
+
+        ul {
+            li {
+                position: relative;
+                float: right;
+                margin-left: 35px;
+
+                a {
+                    color: #fff;
+                }
+
+                .header__language-icon, .header__phone-icon {
+                    width: 29px;
+                    position: absolute;
+                    top: -9px;
+                    @include MediumQuery {
+                        top: 3px;
+                    }
+                }
+
+                .header__logo {
+                    width: 39px;
+                    height: 39px;
+                    top: -15px;
+                    position: absolute;
+                    left: 20px;
+                    @include MediumQuery {
+                        display: none;
+                    }
+                    @include HideOnMobile;
+
+                }
+
+                @include MediumQuery {
+                    float: none;
+                    line-height: 45px;
+                    text-align: center;
+                }
+            }
+
+        }
+    }
+
+    .header__text {
+        font-size: 60px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        color: #fafafa;
+        text-shadow: 0 7px rgb(0, 0, 0, 0.18);
+        padding-top: 10rem;
+        text-align: center;
+    }
+
+    .header__li {
+        .header__link--icon {
+            img {
+                width: 46px;
+                position: absolute;
+                top: -14px;
+                right: 15px;
+                @include MediumQuery {
+                    margin-right: 46%;
+                }
+            }
+        }
+
+        .header__link--button {
+            padding: 10px 42px;
+            border-radius: 23px;
+            background-color: rgba(3, 52, 50, 0.1);
+        }
+    }
+
+    #toggle-button {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        cursor: pointer;
+        display: none;
+        @include MediumQuery {
+            display: block;
+        }
+
+        div {
+            width: 30px;
+            height: 4px;
+            background-color: #3C3C3B;
+            margin: 4px 0;
+            border-radius: 5px;
+        }
+    }
+}

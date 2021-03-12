@@ -1,0 +1,438 @@
+@import "mixins";
+
+.projects {
+    background: #f5f7fa;
+    display: flex;
+
+    @include DesktopView {
+        justify-content: center;
+        padding: 5rem 0 8rem 0;
+    }
+
+    @include MobileView {
+        padding: 4rem 1rem;
+    }
+
+
+    .projects__container {
+        width: 60%;
+        @include MobileView {
+            width: 100%;
+        }
+
+        .projects__title {
+            text-align: center;
+            font-size: 2.1875rem;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.55;
+            letter-spacing: normal;
+            margin-bottom: 10px;
+            color: #0b3a42;
+            @include MobileView {
+                text-align: right;
+                font-size: 24px;
+            }
+
+        }
+
+        .projects__description {
+            margin-top: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.56;
+            letter-spacing: normal;
+            text-align: center;
+            color: #155a6d;
+            @include MobileView {
+                text-align: right;
+                font-size: 14px;
+                line-height: 1;
+            }
+        }
+    }
+
+    .projects__body {
+        margin-top: 2rem;
+
+        .projects__navbar {
+            display: flex;
+            width: 100%;
+
+            .projects__navbar-button {
+                padding: 15px 15px 11px 15px;
+                border-radius: 16px 16px 0 0;
+                background-color: #e7ecf4;
+                margin-left: 1.1rem;
+                width: 126px;
+                text-align: center;
+                font-size: 14px;
+                color: #6a7d9b;
+                cursor: pointer;
+
+                .square-18 {
+                    vertical-align: middle;
+                    margin-left: 0.25rem;
+                    @include HideOnMobile;
+                }
+
+                @include MobileView {
+                    background-color: rgb(220, 241, 244);
+                    color: #00baba;
+                    border-radius: 12px;
+                    font-size: 13px;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    letter-spacing: normal;
+                    margin: 0 0 15px 5px;
+                    padding: 13px 10px 9px 10px;
+                    text-align: center;
+                    border: 0;
+                    display: inline-block;
+                    width: 120px;
+                }
+            }
+
+            @include MobileView {
+                display: block;
+                white-space: nowrap;
+                overflow: auto;
+            }
+
+            .projects__navbar-button--active {
+                background-color: #fff;
+
+                @include MobileView {
+                    background-color: #00baba;
+                    color: #fff;
+                    border-radius: 16px;
+                    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.09);
+                    border: solid 2px #20c5ba !important;
+                }
+
+            }
+        }
+
+    }
+
+    .projects__content {
+        background-color: #ffffff;
+        @include DesktopView {
+            padding: 5% 9.5%;
+        }
+        border-radius: 10px;
+        @include MobileView {
+            background-color: #f5f7fa;
+        }
+
+        .projects__list {
+            list-style: none;
+
+            .projects__list-item {
+                border-top: 1px solid #d8e1ef;
+            }
+
+            .projects__list-item:first-child {
+                border-top: 0;
+            }
+
+            .item__content {
+                padding: 1.2rem 7%;
+
+                .item__content-box {
+                    display: flex;
+                    @include MobileView {
+                        flex-direction: column;
+                    }
+                    flex-wrap: wrap;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    .box {
+                        border-radius: 16px;
+                        background-color: #f6f8fb;
+                        text-align: center;
+                        margin-top: 0.2rem;
+                        @include DesktopView {
+                            padding: 15px 22px;
+                            min-width: 15%;
+                        }
+                        @include MobileView {
+                            width: 100%;
+                            padding-top: 20px;
+                            padding-bottom: 20px;
+                            margin-bottom: 1rem;
+                        }
+
+                        @include CustomQuery(1200) {
+                            width: 35%;
+                            padding-top: 20px;
+                            padding-bottom: 20px;
+                            margin-bottom: 1rem;
+                        }
+
+                        .box__image {
+                            width: 35px;
+                            height: 35px;
+                        }
+
+                        .box__title {
+                            font-size: 12px;
+                            font-weight: bold;
+                            font-stretch: normal;
+                            line-height: 2.69;
+                            letter-spacing: normal;
+                            color: #253343;
+                        }
+
+                        .box__sub-title {
+                            font-size: 12px;
+                            font-weight: 500;
+                            font-stretch: normal;
+                            color: #6a7d9b;
+                        }
+                    }
+                }
+
+                .item__content-text {
+                    margin-right: 14%;
+                    position: relative;
+
+                    img {
+                        width: 48px;
+                        height: 48px;
+                        position: absolute;
+                        top: 5px;
+                        right: -65px;
+                    }
+
+                    h4 {
+                        margin-top: 2rem;
+                        margin-bottom: -0.5rem;
+                        font-size: 15px;
+                        font-weight: 500;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 2.69;
+                        letter-spacing: normal;
+                        text-align: right;
+                        color: #253343;
+                        @include MobileView {
+                            margin-right: 3rem;
+                            margin-bottom: 3px;
+                        }
+                    }
+
+
+                    ul li {
+                        margin-top: 1rem;
+                        font-size: 14px;
+                        font-weight: 500;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.56;
+                        letter-spacing: normal;
+                        text-align: right;
+                        color: #6a7d9b;
+                    }
+
+                    ul li:first-child {
+                        margin-top: 0;
+                    }
+
+                    ul li:before {
+                        content: "\2022";
+                        color: #20c5ba;
+                        font-weight: bolder;
+                        display: inline-block;
+                        width: 8px;
+                        vertical-align: middle;
+                        margin-left: 0.3rem;
+                    }
+
+                    @include MobileView {
+                        img {
+                            width: 38px;
+                            height: 38px;
+                            margin-right: 65px;
+                            margin-top: -5px;
+                        }
+
+                    }
+                }
+
+                .github {
+                    @include DesktopView {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    margin-top: 42px;
+                    flex-wrap: wrap;
+                    border-radius: 14px;
+                    border: solid 2px #e7ecf4;
+                    font-size: 14px;
+                    font-weight: 600;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.69;
+                    letter-spacing: normal;
+                    text-align: right;
+                    position: relative;
+
+                    .github__page-image {
+                        width: 48px;
+                        height: 48px;
+                        margin-left: 10px;
+
+                        @include MobileView {
+                            right: 10px;
+                            top: 13px;
+                        }
+                    }
+
+                    .github__page {
+                        padding: 15px 15px 0 0;
+
+                        @include MobileView {
+                            padding: 15px 15px 15px 0;
+                        }
+
+                        span {
+                            position: relative;
+                            top: -27px;
+                            color: #253343;
+                            @include MobileView {
+                                top: -20px;
+                            }
+                        }
+
+                        p {
+                            color: #6a7d9b;
+                            position: relative;
+                            top: -27px;
+                            right: 55px;
+                            @include MobileView {
+                                top: 0;
+                                right: 0;
+                                font-size: 13px;
+                                text-align: center;
+                            }
+                            @include CustomQuery(810) {
+                                transform: scale(0.8);
+                                transition: 0.3s;
+                            }
+                        }
+
+                        .github__address-mobile {
+
+                            @include HideOnDesktop;
+                        }
+                    }
+
+                    .github__name {
+                        border: solid 1px #d8e1ef;
+                        border-radius: 12px;
+                        padding: 5px 10px;
+                        position: absolute;
+                        left: 15px;
+                        top: 30px;
+                        @include HideOnMobile;
+                        @include MediumQuery {
+                            display: none;
+                        }
+                        @include CustomQuery(1200) {
+                            left: -5px;
+                            top: 60px;
+                            transform: scale(0.8);
+                            transition: 0.2s;
+                        }
+
+
+                        img {
+                            width: 24px;
+                            height: 24px;
+                            vertical-align: middle;
+                            margin-left: 2px;
+                        }
+
+                        span {
+                            font-size: 12px;
+                            font-weight: 600;
+                            text-align: center;
+                            color: #6a7d9b;
+                        }
+                    }
+
+                }
+            }
+
+            .suggest {
+                margin-top: 1rem;
+                background-color: #00baba;
+                border-radius: 12px;
+                border: solid 2px #00baba;
+                font-size: 16px;
+                font-weight: 600;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.56;
+                letter-spacing: normal;
+                text-align: center;
+                color: #fafafa;
+                padding: 8px;
+                @include HideOnDesktop;
+            }
+
+            .projects__list-item > .list-item-wrapper {
+                display: flex;
+                justify-content: space-between;
+
+                > img {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+
+            .projects__list-item {
+                padding: 18px 2%;
+                @include MobileView {
+                    font-size: 12px;
+                }
+
+                > div {
+                    > .item__title {
+                        line-height: 23px;
+                    }
+
+                    > .item__title::before {
+                        content: "\2022";
+                        color: #20c5ba;
+                        font-weight: bolder;
+                        display: inline-block;
+                        width: 8px;
+                        vertical-align: middle;
+                        margin-left: 0.3rem;
+                        @include HideOnMobile;
+                    }
+                }
+
+                @include MobileView {
+                    margin-bottom: 1rem;
+                    border-radius: 12px;
+                    background-color: #e7ecf4;
+                }
+            }
+
+            .projects__list-item--active {
+                background-color: #fff;
+                border-radius: 16px;
+                box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.09);
+                border: solid 2px #20c5ba !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+.required:after {
+    content: " *";
+    color: #20c5ba;
+    position: relative;
+    bottom: 5px;
+    right: 3px;
+}
+
+.start:before {
+    content: " *";
+    color: #20c5ba;
+    vertical-align: -6px;
+    margin-left: 0.3rem;
+}
+
+.line {
+    position: absolute;
+    width: 4px;
+    height: 34px;
+    background-color: #20c5ba;
+    border-radius: 12px 0 0 12px;
+    right: 0;
+    top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.error {
+    border: 1px solid red !important;
+}
+
+.square-18 {
+    width: 18px;
+    height: 18px;
+}
+
+%message {
+    width: 80%;
+    color: #fff;
+    position: absolute;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    right: 8%;
+
+    %close {
+        position: absolute;
+        top: 3px;
+        left: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+}
+
+#success_message {
+    @extend %message;
+    background: #28a745;
+
+    .close {
+        @extend %close;
+        color: #dc3545;
+    }
+}
+
+#error_message {
+    @extend %message;
+    background: #dc3545;
+
+    .close {
+        @extend %close;
+        color: #fff;
+    }
+
+}

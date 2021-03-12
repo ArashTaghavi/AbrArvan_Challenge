@@ -1,0 +1,38 @@
+@mixin MobileView {
+    @media only screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+
+@mixin MediumQuery {
+
+    @media only screen and (max-width: 1000px) and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin CustomQuery($max) {
+
+    @media only screen and (max-width: $max+'px') and (min-width: 767px) {
+        @content
+    }
+}
+
+@mixin DesktopView {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin HideOnMobile {
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+@mixin HideOnDesktop {
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+}

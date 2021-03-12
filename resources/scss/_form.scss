@@ -1,0 +1,281 @@
+@import "mixins";
+
+.form {
+
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0 8rem 0;
+    @include MobileView {
+        padding: 4rem 1rem;
+    }
+
+    .form__container {
+        width: 50%;
+
+        @include MobileView {
+            width: 100%;
+        }
+        @include CustomQuery(1330) {
+            width: 90%;
+        }
+
+
+        .form__header {
+            position: relative;
+
+            .form__title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 0.89;
+                letter-spacing: normal;
+                text-align: right;
+                color: #042623;
+                @include MobileView {
+                    font-size: 24px;
+                    font-weight: 500;
+                }
+            }
+
+            .form__description {
+                margin-top: 0.5rem;
+                font-size: 1rem;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.63;
+                letter-spacing: normal;
+                text-align: right;
+                color: #6e6e6e;
+                @include MobileView {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .form__body {
+            margin-top: 2rem;
+
+            .form__box--styles {
+                padding: 24px 40px 48px 10px;
+                @include MobileView {
+                    padding-right: 5px;
+                }
+                position: relative;
+                border-radius: 16px;
+                background-color: #f5f7fa;
+                @include MobileView {
+                    background-color: #fff;
+                }
+                margin-top: 1rem;
+
+                .form__box-title {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.55;
+                    letter-spacing: normal;
+                    text-align: right;
+                    color: #155a6d;
+                    @include MobileView {
+                        padding-right: 15px;
+                    }
+                }
+
+                .form__input-wrapper {
+                    display: flex;
+                    flex-wrap: wrap;
+                    @include MobileView {
+                        ::-webkit-input-placeholder {
+                            color: transparent;
+                        }
+                        :-moz-placeholder {
+                            color: transparent;
+                        }
+                        ::-moz-placeholder {
+                            color: transparent;
+                        }
+                        :-ms-input-placeholder {
+                            color: transparent;
+                        }
+                        input::placeholder {
+                            color: transparent;
+                        }
+                    }
+                }
+
+                .form__input {
+                    position: relative;
+
+                    input, select, textarea {
+                        padding: 10px 19px 6px 19px;
+                        border-radius: 12px;
+                        border: solid 1px #dbe4f2;
+                        background-color: #ffffff;
+                        width: 75%;
+                        @include MobileView {
+                            position: relative;
+                            width: 100%;
+                            padding-right: 20%;
+                        }
+                    }
+
+                    textarea {
+                        resize: none;
+                        @include MobileView {
+                            padding-right: 25%;
+                        }
+                    }
+
+                    select {
+                        @include MobileView {
+                            padding-right: 85px;
+                            background-color: #e7ecf4;
+                        }
+                    }
+
+                    .form__input-instead {
+                        border-radius: 12px;
+                        border: solid 1px #dbe4f2;
+                        background-color: #ffffff;
+                        width: 70%;
+                        position: absolute;
+                        padding: 13.5px 10px;
+                        top: 0;
+                        right: 17%;
+                        height: 10px;
+
+                        button {
+                            padding: 5px 4% 5px 4%;
+                            line-height: 27px;
+                            border-radius: 12px;
+                            border: solid 1px #dbe4f2;
+                            background-color: #eef2f7;
+                            font-size: 14px;
+                            font-weight: 500;
+                            font-stretch: normal;
+                            position: absolute;
+                            left: -1px;
+                            top: -1px;
+                            color: #9db0cb;
+                        }
+
+                    }
+                }
+
+                .form__input {
+                    width: 50%;
+                    @include MobileView {
+                        width: 100%;
+                        margin: 0.4rem 0;
+                    }
+                }
+
+                .form__input--full_size {
+                    width: 100%;
+                    @include MobileView {
+                        width: 100%;
+                    }
+
+                    label {
+                        width: 10%;
+                    }
+
+                    textarea {
+                        width: 87%;
+                        @include MobileView {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .form__input-warning {
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #9db0cb;
+                    margin-left: 6%;
+
+                }
+
+
+                label {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 2.69;
+                    letter-spacing: normal;
+                    text-align: right;
+                    color: #585858;
+                    display: inline-block;
+                    width: 20%;
+                    @include MobileView {
+                        position: absolute;
+                        z-index: 10;
+                        right: 15px;
+                    }
+                }
+            }
+        }
+
+        .form__footer {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            @include MobileView {
+                flex-direction: column;
+            }
+
+            .form__footer-description {
+                font-size: 1rem;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.63;
+                letter-spacing: normal;
+                text-align: right;
+                color: #20c5ba;
+
+                @include MobileView {
+                    text-align: center;
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            .form__footer-submit {
+                padding: 6px 65px;
+                border-radius: 12px;
+                background-color: #eef2f7;
+                font-size: 1rem;
+                font-weight: 600;
+                font-stretch: normal;
+                border: 0;
+                font-family: YekanBakh, Tahoma, serif;
+                color: #9db0cb;
+            }
+
+            .form__footer-submit--active {
+                background-color: #1fc5b9;
+                color: #fff;
+                cursor: pointer;
+
+                &:hover {
+                    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+                    background-color: #009191;
+                    color: #fff;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+
+
+}
