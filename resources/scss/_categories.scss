@@ -71,6 +71,12 @@
             background-color: #fafafa;
             text-align: center;
             margin-bottom: 0.75rem;
+
+            &:hover {
+                border: solid 2px #00baba;
+                transition: 0.2s;
+            }
+
             @include CustomQuery(1250) {
                 width: 25%;
             }

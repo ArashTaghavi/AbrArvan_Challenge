@@ -14,23 +14,30 @@ let inputHandler = async (e) => {
     let resume_warning = document.getElementById('resume-warning');
     let portfolio_warning = document.getElementById('portfolio-warning');
 
+    let resume_file_name = document.getElementById('resume-file-name');
+    let portfolio_file_name = document.getElementById('portfolio-file-name');
+
     if (resume && (resume.size > '1000000')) {
         resume_warning.innerText = 'فایل بزرگتر از حد مجاز است';
-        document.getElementById('resume').classList.add('error');
+        resume_file_name.innerText = '';
+        document.getElementById('resume-input-instead').classList.add('error_file_input');
         resume_warning.style.color = '#fe5959';
     } else if (resume) {
         resume_warning.innerText = 'حداکثر حجم مجاز فایل 1 مگابایت باشد';
-        document.getElementById('resume').classList.remove('error');
+        resume_file_name.innerText = resume.name;
+        document.getElementById('resume-input-instead').classList.remove('error_file_input');
         resume_warning.style.color = '#9db0cb';
         resume = await toBase64(resume);
     }
     if (portfolio && (portfolio.size > '1000000')) {
         portfolio_warning.innerText = 'فایل بزرگتر از حد مجاز است';
-        document.getElementById('portfolio').classList.add('error');
+        portfolio_file_name.innerText = '';
+        document.getElementById('portfolio-input-instead').classList.add('error_file_input');
         portfolio_warning.style.color = '#fe5959';
     } else if (portfolio) {
         portfolio_warning.innerText = 'حداکثر حجم مجاز فایل 1 مگابایت باشد';
-        document.getElementById('resume').classList.remove('error');
+        portfolio_file_name.innerText = portfolio.name;
+        document.getElementById('portfolio-input-instead').classList.remove('error_file_input');
         portfolio_warning.style.color = '#9db0cb';
         portfolio = await toBase64(portfolio);
 
@@ -186,6 +193,15 @@ let isValidEmail = email => {
     let re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     return re.test(email);
 }
+
+
+document.getElementById('resume-button').addEventListener('click', () => {
+    document.getElementById('resume').click();
+});
+
+document.getElementById('portfolio-button').addEventListener('click', () => {
+    document.getElementById('portfolio').click();
+});
 
 let arrows = document.querySelectorAll('.arrow');
 

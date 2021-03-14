@@ -1040,7 +1040,7 @@ a {
 }
 .form .form__container .form__body .form__box--styles .form__input .form__input-instead {
   border-radius: 12px;
-  border: solid 1px #dbe4f2;
+  border: 2px solid #dbe4f2;
   background-color: #ffffff;
   width: 70%;
   position: absolute;
@@ -1048,6 +1048,23 @@ a {
   top: 0;
   right: 17%;
   height: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .form .form__container .form__body .form__box--styles .form__input .form__input-instead {
+    position: relative;
+    width: 93%;
+    right: 0;
+  }
+}
+.form .form__container .form__body .form__box--styles .form__input .form__input-instead span {
+  position: relative;
+  color: #20c5ba;
+  font-size: 12px;
+}
+@media only screen and (max-width: 768px) {
+  .form .form__container .form__body .form__box--styles .form__input .form__input-instead span {
+    right: 20%;
+  }
 }
 .form .form__container .form__body .form__box--styles .form__input .form__input-instead button {
   padding: 5px 4% 5px 4%;
@@ -1062,6 +1079,15 @@ a {
   left: -1px;
   top: -1px;
   color: #9db0cb;
+}
+.form .form__container .form__body .form__box--styles .form__input .form__input-instead:hover {
+  border: solid 2px #20c4ba;
+}
+.form .form__container .form__body .form__box--styles .form__input .form__input-instead:hover button {
+  color: #fff;
+  background-color: #20c5ba;
+  border: solid 1px #20c5ba;
+  transition: 0.1s;
 }
 .form .form__container .form__body .form__box--styles .form__input {
   width: 50%;
@@ -1100,6 +1126,7 @@ a {
   text-align: left;
   color: #9db0cb;
   margin-left: 6%;
+  margin-top: 0.5rem;
 }
 .form .form__container .form__body .form__box--styles label {
   font-size: 1rem;
@@ -1246,6 +1273,10 @@ a {
   background-color: #fafafa;
   text-align: center;
   margin-bottom: 0.75rem;
+}
+.categories .categories__body .categories__item:hover {
+  border: solid 2px #00baba;
+  transition: 0.2s;
 }
 @media only screen and (max-width: 1250px) and (min-width: 767px) {
   .categories .categories__body .categories__item {
@@ -1467,4 +1498,12 @@ a {
 }
 #error_message .close {
   color: #fff;
+}
+
+.error_file_input {
+  border: 2px solid #fe5959 !important;
+}
+.error_file_input button {
+  color: #fe5959 !important;
+  border: 1px solid #fe5959 !important;
 }

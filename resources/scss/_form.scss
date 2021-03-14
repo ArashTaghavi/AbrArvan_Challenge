@@ -140,7 +140,7 @@
 
                     .form__input-instead {
                         border-radius: 12px;
-                        border: solid 1px #dbe4f2;
+                        border: 2px solid #dbe4f2;
                         background-color: #ffffff;
                         width: 70%;
                         position: absolute;
@@ -148,6 +148,22 @@
                         top: 0;
                         right: 17%;
                         height: 10px;
+
+                        @include MobileView {
+                            position: relative;
+                            width: 93%;
+                            right: 0;
+                        }
+
+                        span {
+                            position: relative;
+                            color: #20c5ba;
+                            font-size: 12px;
+                            @include MobileView {
+                                right: 20%;
+                            }
+                        }
+
 
                         button {
                             padding: 5px 4% 5px 4%;
@@ -162,6 +178,17 @@
                             left: -1px;
                             top: -1px;
                             color: #9db0cb;
+                        }
+
+                        &:hover {
+                            border: solid 2px #20c4ba;
+
+                            button {
+                                color: #fff;
+                                background-color: #20c5ba;
+                                border: solid 1px #20c5ba;
+                                transition: 0.1s;
+                            }
                         }
 
                     }
@@ -202,6 +229,7 @@
                     text-align: left;
                     color: #9db0cb;
                     margin-left: 6%;
+                    margin-top: 0.5rem;
 
                 }
 

@@ -15,7 +15,6 @@
 @include('components._Categories')
 @include('components._Slider')
 
-
 <script src="/assets/js/app.js"></script>
 </body>
 </html>
