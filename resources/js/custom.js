@@ -16,7 +16,8 @@ for (let i = 0; i < arrows.length; i++) {
 
 
         // Add active class to current li
-        li.classList.add('projects__list-item--active')
+        li.classList.add('projects__list-item--active');
+
 
         // Hide all content items
         if (content.classList.contains('d-none')) {

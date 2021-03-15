@@ -6,8 +6,8 @@ let inputHandler = async (e) => {
     let company = document.getElementById('company').value;
     let resume = document.getElementById('resume').files[0];
     let portfolio = document.getElementById('portfolio').files[0];
-    let abryar_type = document.getElementById('abryar_type').value;
-    let abryar_level = document.getElementById('abryar_level').value;
+    let abryar_type = document.getElementById('abryar_type-value').innerText;
+    let abryar_level = document.getElementById('abryar_level-value').innerText;
     let description = document.getElementById('description').value;
 
 
@@ -122,10 +122,10 @@ function validation(data) {
         document.getElementById('email').classList.remove('error');
     }
     if (data.rows[0].cells[4].value === undefined) {
-        document.getElementById('resume').classList.add('error');
+        document.getElementById('resume-input-instead').classList.add('error_file_input');
         condition = false;
     } else {
-        document.getElementById('resume').classList.remove('error');
+        document.getElementById('resume-input-instead').classList.remove('error_file_input');
     }
 
     if (!condition)
@@ -202,3 +202,46 @@ document.getElementById('resume-button').addEventListener('click', () => {
 document.getElementById('portfolio-button').addEventListener('click', () => {
     document.getElementById('portfolio').click();
 });
+
+
+document.querySelector('body').addEventListener('click', (e) => {
+
+    if (e.target.id !== 'abryar_type-input-instead') {
+        document.getElementById('abryar_type-content').classList.add('d-none');
+        document.getElementById('abryar_type-content').classList.remove('d-block');
+    }
+    if (e.target.id !== 'abryar_level-input-instead') {
+        document.getElementById('abryar_level-content').classList.add('d-none');
+        document.getElementById('abryar_level-content').classList.remove('d-block');
+    }
+
+})
+;
+
+let selectTagHandler = (e, type) => {
+
+    if (type === 'abryar_type') {
+        let tag = document.getElementById('abryar_type-content');
+        tag.classList.remove('d-none');
+        tag.classList.add('d-block');
+    } else if (type === 'abryar_level') {
+        let tag = document.getElementById('abryar_level-content');
+        tag.classList.remove('d-none');
+        tag.classList.add('d-block');
+    }
+}
+
+let selectValueHandler = (e, type) => {
+    if (type === 'abryar_type') {
+        let tag = document.getElementById('abryar_type-content');
+        tag.classList.remove('d-none');
+        tag.classList.add('d-block');
+        document.getElementById('abryar_type-value').innerText = e.target.innerText;
+
+    } else if (type === 'abryar_level') {
+        let tag = document.getElementById('abryar_level-content');
+        tag.classList.remove('d-none');
+        tag.classList.add('d-block');
+        document.getElementById('abryar_level-value').innerText = e.target.innerText;
+    }
+}

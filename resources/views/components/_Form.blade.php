@@ -101,23 +101,36 @@
                     <div class="form__input-wrapper">
                         <div class="form__input">
                             <label for="abryar_type">نوع ابریار</label>
-                            <select name="" id="abryar_type">
-                                <option value="ابریار کوچ ابری">ابریار کوچ ابری</option>
-                                <option value="ابریار فنی">ابریار فنی</option>
-                                <option value="ابریار بازارچه">ابریار بازارچه</option>
-                                <option value="ابریار آموزش">ابریار آموزش</option>
-                                <option value="ابریار فروش">ابریار فروش</option>
-                            </select>
+                            <div class="form__input-instead" id="abryar_type-input-instead"
+                                 onclick="selectTagHandler(event,'abryar_type')">
+                                <img src="/assets/images/arrow-down-2.png" alt="arrow-down-2">
+                                <span id="abryar_type-value"></span>
+                                <div id="abryar_type-content" class="d-none">
+                                    <p onclick="selectValueHandler(event,'abryar_type')">ابریار کوچ ابری</p>
+                                    <p onclick="selectValueHandler(event,'abryar_type')">ابریار فنی</p>
+                                    <p onclick="selectValueHandler(event,'abryar_type')">ابریار بازارچه</p>
+                                    <p onclick="selectValueHandler(event,'abryar_type')">ابریار آموزش</p>
+                                    <p onclick="selectValueHandler(event,'abryar_type')">ابریار فروش</p>
+                                </div>
+
+                            </div>
                         </div>
                         <div class="form__input">
                             <label for="abryar_level">سطح ابریار</label>
-                            <select name="" id="abryar_level">
-                                <option value="سطح ۱">سطح ۱</option>
-                                <option value="سطح ۲">سطح ۲</option>
-                                <option value="سطح ۳">سطح ۳</option>
-                                <option value="سطح ۴">سطح ۴</option>
-                                >
-                            </select>
+
+                            <div class="form__input-instead" id="abryar_level-input-instead"
+                                 onclick="selectTagHandler(event,'abryar_level')">
+                                <img src="/assets/images/arrow-down-2.png" alt="arrow-down-2">
+                                <span id="abryar_level-value"></span>
+                                <div id="abryar_level-content" class="d-none">
+                                    <p onclick="selectValueHandler(event,'abryar_level')">سطح ۱</p>
+                                    <p onclick="selectValueHandler(event,'abryar_level')">سطح ۲</p>
+                                    <p onclick="selectValueHandler(event,'abryar_level')">سطح ۳</p>
+                                    <p onclick="selectValueHandler(event,'abryar_level')">سطح ۴</p>
+                                </div>
+
+                            </div>
+
                         </div>
                         <div class="form__input form__input--full_size">
                             <label for="description">توضیحات</label>

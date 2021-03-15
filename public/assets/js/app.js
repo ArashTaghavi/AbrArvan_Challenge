@@ -6,8 +6,8 @@ let inputHandler = async (e) => {
     let company = document.getElementById('company').value;
     let resume = document.getElementById('resume').files[0];
     let portfolio = document.getElementById('portfolio').files[0];
-    let abryar_type = document.getElementById('abryar_type').value;
-    let abryar_level = document.getElementById('abryar_level').value;
+    let abryar_type = document.getElementById('abryar_type-value').innerText;
+    let abryar_level = document.getElementById('abryar_level-value').innerText;
     let description = document.getElementById('description').value;
 
 
@@ -122,10 +122,10 @@ function validation(data) {
         document.getElementById('email').classList.remove('error');
     }
     if (data.rows[0].cells[4].value === undefined) {
-        document.getElementById('resume').classList.add('error');
+        document.getElementById('resume-input-instead').classList.add('error_file_input');
         condition = false;
     } else {
-        document.getElementById('resume').classList.remove('error');
+        document.getElementById('resume-input-instead').classList.remove('error_file_input');
     }
 
     if (!condition)
@@ -203,6 +203,49 @@ document.getElementById('portfolio-button').addEventListener('click', () => {
     document.getElementById('portfolio').click();
 });
 
+
+document.querySelector('body').addEventListener('click', (e) => {
+
+    if (e.target.id !== 'abryar_type-input-instead') {
+        document.getElementById('abryar_type-content').classList.add('d-none');
+        document.getElementById('abryar_type-content').classList.remove('d-block');
+    }
+    if (e.target.id !== 'abryar_level-input-instead') {
+        document.getElementById('abryar_level-content').classList.add('d-none');
+        document.getElementById('abryar_level-content').classList.remove('d-block');
+    }
+
+})
+;
+
+let selectTagHandler = (e, type) => {
+
+    if (type === 'abryar_type') {
+        let tag = document.getElementById('abryar_type-content');
+        tag.classList.remove('d-none');
+        tag.classList.add('d-block');
+    } else if (type === 'abryar_level') {
+        let tag = document.getElementById('abryar_level-content');
+        tag.classList.remove('d-none');
+        tag.classList.add('d-block');
+    }
+}
+
+let selectValueHandler = (e, type) => {
+    if (type === 'abryar_type') {
+        let tag = document.getElementById('abryar_type-content');
+        tag.classList.remove('d-none');
+        tag.classList.add('d-block');
+        document.getElementById('abryar_type-value').innerText = e.target.innerText;
+
+    } else if (type === 'abryar_level') {
+        let tag = document.getElementById('abryar_level-content');
+        tag.classList.remove('d-none');
+        tag.classList.add('d-block');
+        document.getElementById('abryar_level-value').innerText = e.target.innerText;
+    }
+}
+
 let arrows = document.querySelectorAll('.arrow');
 
 for (let i = 0; i < arrows.length; i++) {
@@ -221,7 +264,8 @@ for (let i = 0; i < arrows.length; i++) {
 
 
         // Add active class to current li
-        li.classList.add('projects__list-item--active')
+        li.classList.add('projects__list-item--active');
+
 
         // Hide all content items
         if (content.classList.contains('d-none')) {
@@ -233,4 +277,64 @@ for (let i = 0; i < arrows.length; i++) {
         }
 
     });
+}
+
+let slider = document.querySelector('.slider__content');
+
+let arrow_left = document.querySelector('.slider__arrow-left');
+let arrow_right = document.querySelector('.slider__arrow-right');
+
+let slider_width = slider.clientWidth;
+
+let slider_scroll = slider.scrollWidth;
+
+let hide_scroll = slider_scroll - slider_width;
+
+
+arrow_left.addEventListener('click', (e) => {
+    if (arrow_right.classList.contains('d-none')) {
+        arrow_right.classList.remove('d-none');
+        arrow_right.classList.add('d-block');
+    }
+    slider.scrollLeft -= 100;
+    hide_scroll -= 100;
+
+
+    if (hide_scroll <= 0) {
+        arrow_left.classList.add('d-none');
+        arrow_left.classList.remove('d-block');
+    } else {
+        arrow_left.classList.remove('d-none');
+        arrow_left.classList.add('d-block');
+
+    }
+
+});
+
+arrow_right.addEventListener('click', (e) => {
+    if (arrow_left.classList.contains('d-none')) {
+        arrow_left.classList.remove('d-none');
+        arrow_left.classList.add('d-block');
+    }
+
+
+    slider.scrollLeft += 100;
+    hide_scroll += 100;
+
+    if (hide_scroll >= slider_width) {
+        arrow_right.classList.add('d-none');
+        arrow_right.classList.remove('d-block');
+    } else {
+        arrow_right.classList.remove('d-none');
+        arrow_right.classList.add('d-block');
+    }
+});
+
+
+let activeHandler = (e, condition) => {
+    let base_url = '/assets/images/';
+    if (condition)
+        e.src = `${base_url}slider-arrow-enable.png`;
+    else
+        e.src = `${base_url}slider-arrow-disable.png`;
 }

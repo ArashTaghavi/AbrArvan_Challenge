@@ -111,7 +111,7 @@
                 .form__input {
                     position: relative;
 
-                    input, select, textarea {
+                    input, textarea {
                         padding: 10px 19px 6px 19px;
                         border-radius: 12px;
                         border: solid 1px #dbe4f2;
@@ -191,6 +191,103 @@
                             }
                         }
 
+                    }
+
+                    #abryar_type-input-instead {
+                        border: 1px solid #dbe4f2;
+                        background-color: #e7ecf4;
+
+                        span {
+                            position: absolute;
+                        }
+
+                        @include MobileView {
+                            span {
+                                right: 25%;
+                            }
+                        }
+
+                        img {
+                            position: absolute;
+                            left: -10px;
+                            transform: scale(0.3);
+                            top: -2px;
+                        }
+
+                        #abryar_type-content {
+                            border-radius: 12px;
+                            border: solid 2px #d5dde7;
+                            background-color: #ffffff;
+                            position: relative;
+                            font-size: 14px;
+                            z-index: 15;
+                            line-height: 2rem;
+                            padding: 9px;
+                            top: -15px;
+                            width: 100%;
+                            right: -11px;
+
+                            p {
+                                padding-right: 1rem;
+                                color: #6a7d9b;
+
+                                &:hover {
+                                    border-radius: 12px;
+                                    background-color: rgba(233, 237, 245, 0.4);
+                                    color: #00baba;
+                                    transition: 0.2s;
+                                }
+                            }
+                        }
+                    }
+
+                    #abryar_level-input-instead {
+                        border: 1px solid #dbe4f2;
+                        background-color: #e7ecf4;
+
+                        span {
+                            position: absolute;
+                        }
+
+                        @include MobileView {
+                            span {
+                                right: 25%;
+                            }
+                        }
+
+                        img {
+                            position: absolute;
+                            left: -10px;
+                            transform: scale(0.3);
+                            top: -2px;
+
+                        }
+
+                        #abryar_level-content {
+                            border-radius: 12px;
+                            border: solid 2px #d5dde7;
+                            background-color: #ffffff;
+                            position: relative;
+                            font-size: 14px;
+                            z-index: 15;
+                            line-height: 2rem;
+                            padding: 9px;
+                            top: -15px;
+                            width: 100%;
+                            right: -11px;
+
+                            p {
+                                padding-right: 1rem;
+                                color: #6a7d9b;
+
+                                &:hover {
+                                    border-radius: 12px;
+                                    background-color: rgba(233, 237, 245, 0.4);
+                                    color: #00baba;
+                                    transition: 0.2s;
+                                }
+                            }
+                        }
                     }
                 }
 
