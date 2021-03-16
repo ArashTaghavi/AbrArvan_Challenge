@@ -69,6 +69,13 @@
         }
 
         .slider__arrow-right, .slider__arrow-left {
+            @include MobileView {
+                display: none;
+            }
+            @include MediumQuery {
+                display: none;
+            }
+
             img {
 
                 width: 30px;
